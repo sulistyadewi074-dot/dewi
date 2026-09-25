@@ -1,6 +1,6 @@
 {
   "name": "PROJEK UTAMA Tes Sumatif ",
-  "description": "Aplikasi Tes Sumatif Matematika TKA Kelas VI SD Negeri 3 Loloan Timur dengan 4 tahap tes, sinkronisasi Google Spreadsheet, unduh PDF naskah \u0026 hasil tes, serta panel guru.",
+  "description": "Aplikasi Tes Sumatif Matematika Materi Pecahan Kelas VI SD Negeri 3 Loloan Timur dengan 35 butir soal (20 PG, 5 PGK, 10 PGK Kategori), ilustrasi gambar visual, sinkronisasi Google Spreadsheet, unduh PDF, serta panel guru.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

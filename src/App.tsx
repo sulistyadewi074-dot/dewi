@@ -15,7 +15,7 @@ import { Stage3Result } from './components/Stage3Result';
 import { Stage4TeacherPanel } from './components/Stage4TeacherPanel';
 import { TeacherAuthModal } from './components/TeacherAuthModal';
 
-const STORAGE_QUESTIONS_KEY = 'sd3_loloan_timur_questions_v2';
+const STORAGE_QUESTIONS_KEY = 'sd3_loloan_timur_questions_pecahan_v4';
 const STORAGE_ALLOW_REVIEW_KEY = 'sd3_loloan_timur_allow_review';
 
 export default function App() {
@@ -32,10 +32,14 @@ export default function App() {
   // Bank Soal (dimuat dari default & sinkron dengan localStorage jika diedit guru)
   const [questions, setQuestions] = useState<Question[]>(() => {
     try {
+      // Bersihkan key versi lama jika ada
+      localStorage.removeItem('sd3_loloan_timur_questions_v2');
+      localStorage.removeItem('sd3_loloan_timur_questions_pecahan_v3');
+
       const saved = localStorage.getItem(STORAGE_QUESTIONS_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        // Pastikan jumlah dan struktur sesuai dengan distribusi soal terbaru (30 soal: 18 PG, 3 PGK, 9 PGK Kategori)
+        // Pastikan jumlah dan struktur sesuai dengan distribusi soal materi Pecahan (35 butir: 20 PG, 5 PGK, 10 PGK Kategori)
         if (Array.isArray(parsed) && parsed.length === INITIAL_QUESTIONS.length) {
           return parsed;
         }
@@ -73,7 +77,7 @@ export default function App() {
     });
   };
 
-  // Reset soal ke 30 butir standar (18 PG, 3 PGK, 9 PGK Kategori)
+  // Reset soal ke 35 butir standar materi Pecahan (20 PG, 5 PGK, 10 PGK Kategori)
   const handleResetDefaultQuestions = () => {
     setQuestions(INITIAL_QUESTIONS);
     try {

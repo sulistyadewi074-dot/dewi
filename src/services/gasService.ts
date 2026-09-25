@@ -534,7 +534,7 @@ function doPost(e) {
     var benar = contents.correctCount !== undefined ? contents.correctCount : (contents.benar || 0);
     var salah = contents.incorrectCount !== undefined ? contents.incorrectCount : (contents.salah || 0);
     var nilai = contents.finalScore !== undefined ? contents.finalScore : (contents.nilai || 0);
-    var status = contents.status || (nilai >= 70 ? "Lulus" : "Belum Lulus");
+    var status = contents.status || (nilai >= 65 ? "Lulus" : "Belum Lulus");
     var mataPelajaran = contents.mataPelajaran || "MATEMATIKA";
     
     sheet.appendRow([

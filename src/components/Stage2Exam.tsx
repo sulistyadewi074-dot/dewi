@@ -373,9 +373,22 @@ export const Stage2Exam: React.FC<Stage2ExamProps> = ({
               </div>
 
               {/* Teks Soal */}
-              <div className="text-sm sm:text-base text-slate-900 leading-relaxed font-medium whitespace-pre-line mb-6">
+              <div className="text-sm sm:text-base text-slate-900 leading-relaxed font-medium whitespace-pre-line mb-4">
                 {currentQ.text}
               </div>
+
+              {/* Tampilan Gambar / Ilustrasi Soal Jika Ada */}
+              {currentQ.imageSvg && (
+                <div className="mb-6 flex flex-col items-center justify-center p-4 bg-slate-50/90 border border-slate-200 rounded-2xl">
+                  <div
+                    className="flex items-center justify-center max-w-full overflow-x-auto"
+                    dangerouslySetInnerHTML={{ __html: currentQ.imageSvg }}
+                  />
+                  <span className="text-[11px] text-slate-500 mt-2 font-medium">
+                    Gambar Ilustrasi Representasi Pecahan
+                  </span>
+                </div>
+              )}
 
               {/* Tampilan Opsi Jawaban: Pilihan Ganda (PG) */}
               {currentQ.type === 'pg' && (

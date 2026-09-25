@@ -205,6 +205,14 @@ export const Stage3Result: React.FC<Stage3ResultProps> = ({
                     </span>
                   </div>
                   <p className="text-slate-800">{q.text}</p>
+                  {q.imageSvg && (
+                    <div className="my-2 flex flex-col items-center justify-center p-3 bg-white border border-slate-200 rounded-xl">
+                      <div
+                        className="flex items-center justify-center max-w-full overflow-x-auto scale-90"
+                        dangerouslySetInnerHTML={{ __html: q.imageSvg }}
+                      />
+                    </div>
+                  )}
                   <div className="p-2.5 rounded bg-blue-50/70 border border-blue-100 text-slate-700">
                     <span className="font-bold text-blue-900 block mb-0.5">Pembahasan:</span>
                     <p className="whitespace-pre-line">{q.explanation}</p>

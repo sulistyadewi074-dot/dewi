@@ -250,36 +250,74 @@ export const Stage1Identity: React.FC<Stage1IdentityProps> = ({
           <div className="bg-slate-900 text-white rounded-2xl p-5 shadow-sm">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
               <FileText className="w-4 h-4 text-blue-400" />
-              Komposisi & Format Soal
+              Komposisi & Format Soal (Materi Pecahan)
             </h4>
             <div className="space-y-2 text-xs">
               <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
                 <span>1. Pilihan Ganda (PG)</span>
-                <span className="font-bold text-blue-300">18 Butir</span>
+                <span className="font-bold text-blue-300">20 Butir</span>
               </div>
               <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
                 <span>2. Pilihan Ganda Kompleks (PGK)</span>
-                <span className="font-bold text-emerald-300">3 Butir</span>
+                <span className="font-bold text-emerald-300">5 Butir</span>
               </div>
               <div className="flex items-center justify-between bg-slate-800/80 p-2.5 rounded-lg border border-slate-700">
                 <span>3. PGK Kategori (Benar / Salah)</span>
-                <span className="font-bold text-amber-300">9 Butir</span>
+                <span className="font-bold text-amber-300">10 Butir</span>
               </div>
               <div className="flex items-center justify-between pt-2 border-t border-slate-800 text-slate-300">
                 <span>Total Butir Soal:</span>
-                <span className="font-extrabold text-white text-sm">30 Soal</span>
+                <span className="font-extrabold text-white text-sm">35 Soal</span>
               </div>
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 space-y-1.5">
               <p className="flex items-start gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                <span>Seluruh soal berfokus pada lingkup materi <strong>Pecahan</strong> untuk siswa SD kelas 6.</span>
+              </p>
+              <p className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                 <span>Soal dan opsi jawaban diacak otomatis secara adil untuk setiap siswa.</span>
               </p>
               <p className="flex items-start gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
-                <span>Seluruh 30 soal wajib dijawab sebelum jawaban dapat dikirimkan ke server.</span>
+                <span>Seluruh 35 soal wajib dijawab sebelum jawaban dapat dikirimkan ke server.</span>
               </p>
+            </div>
+          </div>
+
+          {/* Card Informasi Sekolah & Pengampu */}
+          <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200 text-xs space-y-3">
+            <div className="flex items-center gap-2 pb-2 border-b border-slate-100 text-slate-900 font-bold">
+              <School className="w-4 h-4 text-blue-600" />
+              <span>Informasi Ujian Sekolah</span>
+            </div>
+            <div className="space-y-1.5 text-slate-600">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Sekolah:</span>
+                <span className="font-semibold text-slate-800 text-right">{CONFIG.SEKOLAH}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Mata Pelajaran:</span>
+                <span className="font-semibold text-slate-800">{CONFIG.MATA_PELAJARAN}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Materi Pokok:</span>
+                <span className="font-semibold text-blue-700">{CONFIG.MATERI}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Kelas:</span>
+                <span className="font-semibold text-slate-800">Kelas {CONFIG.KELAS}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">KKTP:</span>
+                <span className="font-semibold text-emerald-700">{CONFIG.KKTP}</span>
+              </div>
+              <div className="pt-2 border-t border-slate-100 flex justify-between">
+                <span className="text-slate-500">Guru Pengampu:</span>
+                <span className="font-semibold text-slate-800 text-right">{CONFIG.GURU}</span>
+              </div>
             </div>
           </div>
         </div>

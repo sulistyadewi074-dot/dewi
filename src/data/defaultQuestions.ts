@@ -1,578 +1,798 @@
 import { Question } from '../types';
 
 export const INITIAL_QUESTIONS: Question[] = [
-  // --- PILIHAN GANDA (18 SOAL) ---
+  // =========================================================================
+  // PILIHAN GANDA (20 BUTIR SOAL: NO. 1 - 20)
+  // Setiap soal memiliki 4 opsi jawaban (A, B, C, D) dengan 1 jawaban benar.
+  // =========================================================================
   {
     id: 1,
     type: 'pg',
-    topic: 'Bilangan Bulat',
+    topic: 'Pecahan Senilai',
     difficulty: 'Mudah',
-    text: 'Suhu sebongkah es mula-mula adalah -5°C. Es tersebut dipanaskan di atas kompor sehingga suhunya naik rata-rata 3°C setiap 2 menit. Suhu es tersebut setelah dipanaskan selama 10 menit adalah...',
+    text: 'Perhatikan gambar lingkaran yang terbagi menjadi beberapa juring sama besar berikut! Nilai pecahan yang senilai dengan daerah yang diarsir adalah...',
+    imageSvg: `<svg viewBox="0 0 240 210" class="w-52 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(120, 100)">
+    <path d="M 0 0 L 80 0 A 80 80 0 0 1 56.57 56.57 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <path d="M 0 0 L 56.57 56.57 A 80 80 0 0 1 0 80 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <path d="M 0 0 L 0 80 A 80 80 0 0 1 -56.57 56.57 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <path d="M 0 0 L -56.57 56.57 A 80 80 0 0 1 -80 0 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 0 0 L -80 0 A 80 80 0 0 1 -56.57 -56.57 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 0 0 L -56.57 -56.57 A 80 80 0 0 1 0 -80 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 0 0 L 0 -80 A 80 80 0 0 1 56.57 -56.57 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 0 0 L 56.57 -56.57 A 80 80 0 0 1 80 0 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+  <text x="120" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">3 dari 8 bagian diarsir</text>
+</svg>`,
     options: [
-      { id: 'A', text: '8°C' },
-      { id: 'B', text: '10°C' },
-      { id: 'C', text: '15°C' },
-      { id: 'D', text: '-2°C' },
+      { id: 'A', text: '2/5' },
+      { id: 'B', text: '6/16' },
+      { id: 'C', text: '5/8' },
+      { id: 'D', text: '9/16' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Kenaikan suhu terjadi selama 10 menit dengan kenaikan 3°C tiap 2 menit.\nBanyak periode kenaikan = 10 ÷ 2 = 5 kali.\nTotal kenaikan suhu = 5 × 3°C = 15°C.\nSuhu akhir = Suhu awal + Kenaikan = -5°C + 15°C = 10°C.',
+      'Daerah lingkaran dibagi menjadi 8 juring sama besar dan 3 juring diarsir, sehingga bernilai pecahan 3/8.\nPecahan yang senilai diperoleh dengan mengalikan pembilang dan penyebut dengan bilangan yang sama:\n(3 × 2) / (8 × 2) = 6/16.\nJadi, pecahan yang senilai adalah 6/16.',
   },
   {
     id: 2,
     type: 'pg',
-    topic: 'Operasi Pecahan & Bilangan Cacah',
-    difficulty: 'Sedang',
-    text: 'Pak Ahmad memanen 2,5 kuintal beras dari sawahnya. Sebanyak 3/5 kuintal dijual ke pasar, dan sisanya dibagikan kepada 5 orang tetangga sama banyak. Berapa kilogram beras yang diterima oleh masing-masing tetangga?',
+    topic: 'Menyederhanakan Pecahan',
+    difficulty: 'Mudah',
+    text: 'Bentuk paling sederhana dari pecahan 48/72 adalah...',
     options: [
-      { id: 'A', text: '32 kg' },
-      { id: 'B', text: '35 kg' },
-      { id: 'C', text: '38 kg' },
-      { id: 'D', text: '42 kg' },
+      { id: 'A', text: '3/4' },
+      { id: 'B', text: '4/6' },
+      { id: 'C', text: '2/3' },
+      { id: 'D', text: '1/2' },
     ],
     correctAnswer: 'C',
     explanation:
-      '1 kuintal = 100 kg.\nPanen = 2,5 kuintal = 250 kg.\nDijual ke pasar = 3/5 kuintal = (3/5 × 100 kg) = 60 kg.\nSisa beras = 250 kg - 60 kg = 190 kg.\nBeras tiap tetangga = 190 kg ÷ 5 = 38 kg.',
+      'Untuk menyederhanakan pecahan 48/72 ke bentuk paling sederhana, kita bagi pembilang dan penyebut dengan FPB dari 48 dan 72, yaitu 24.\n48 ÷ 24 = 2\n72 ÷ 24 = 3\nMaka bentuk paling sederhananya adalah 2/3.',
   },
   {
     id: 3,
     type: 'pg',
-    topic: 'FPB & KPK',
-    difficulty: 'Sedang',
-    text: 'Ibu Guru memiliki 48 buku tulis, 72 pensil, dan 96 penghapus. Seluruh perlengkapan tersebut akan dibagikan ke sebanyak-banyaknya siswa berprestasi dengan jumlah tiap jenis barang yang sama banyak. Berapa banyak siswa yang menerima dan berapa banyak pensil yang didapat oleh setiap siswa?',
+    topic: 'Mengubah Bentuk Pecahan',
+    difficulty: 'Mudah',
+    text: 'Pecahan campuran 3 4/5 jika diubah ke dalam bentuk pecahan biasa dan pecahan desimal berturut-turut adalah...',
     options: [
-      { id: 'A', text: '24 siswa dan masing-masing mendapat 3 pensil' },
-      { id: 'B', text: '24 siswa dan masing-masing mendapat 4 pensil' },
-      { id: 'C', text: '16 siswa dan masing-masing mendapat 3 pensil' },
-      { id: 'D', text: '12 siswa dan masing-masing mendapat 6 pensil' },
+      { id: 'A', text: '19/5 dan 3,8' },
+      { id: 'B', text: '17/5 dan 3,4' },
+      { id: 'C', text: '19/5 dan 3,4' },
+      { id: 'D', text: '12/5 dan 2,4' },
     ],
     correctAnswer: 'A',
     explanation:
-      'Mencari pembagian sama banyak menggunakan FPB:\n48 = 2⁴ × 3\n72 = 2³ × 3²\n96 = 2⁵ × 3\nFPB = 2³ × 3 = 8 × 3 = 24 siswa.\nJumlah pensil tiap siswa = 72 ÷ 24 = 3 pensil.',
+      'Pecahan biasa: (3 × 5 + 4) / 5 = 19/5.\nPecahan desimal: 19 ÷ 5 = 3,8 (atau 3 + 4/5 = 3 + 8/10 = 3,8).\nJadi jawabannya adalah 19/5 dan 3,8.',
   },
   {
     id: 4,
     type: 'pg',
-    topic: 'KPK (Kelipatan Persekutuan Terkecil)',
+    topic: 'Mengubah ke Persen',
     difficulty: 'Mudah',
-    text: 'Di sebuah pos kamling terdapat tiga lonceng pengingat ronda. Lonceng pertama berbunyi setiap 12 menit, lonceng kedua setiap 15 menit, dan lonceng ketiga setiap 20 menit. Jika ketiga lonceng berbunyi bersamaan pada pukul 08.00, pada pukul berapa ketiga lonceng akan berbunyi bersamaan kembali untuk kedua kalinya?',
+    text: 'Bentuk persen dari pecahan 7/20 adalah...',
     options: [
-      { id: 'A', text: '08.45' },
-      { id: 'B', text: '09.00' },
-      { id: 'C', text: '09.15' },
-      { id: 'D', text: '09.30' },
+      { id: 'A', text: '28%' },
+      { id: 'B', text: '35%' },
+      { id: 'C', text: '45%' },
+      { id: 'D', text: '70%' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Mencari waktu bersamaan kembali menggunakan KPK:\n12 = 2² × 3\n15 = 3 × 5\n20 = 2² × 5\nKPK = 2² × 3 × 5 = 4 × 3 × 5 = 60 menit (1 jam).\nKetiga lonceng berbunyi bersamaan lagi pada: 08.00 + 1 jam = 09.00.',
+      'Bentuk persen artinya perseratus.\n7/20 = (7 × 5) / (20 × 5) = 35/100 = 35%.\nAtau: 7/20 × 100% = 35%.',
   },
   {
     id: 5,
     type: 'pg',
-    topic: 'Perbandingan & Skala',
+    topic: 'Pecahan Desimal & Persen',
     difficulty: 'Mudah',
-    text: 'Jarak antara Kota Denpasar dan Kota Negara pada peta adalah 6 cm. Jika skala yang digunakan pada peta tersebut adalah 1 : 1.500.000, maka jarak sebenarnya antara kedua kota tersebut adalah...',
+    text: 'Perhatikan gambar persegi panjang yang dibagi menjadi petak-petak berukuran sama berikut! Nilai pecahan desimal dan persen dari daerah yang diarsir adalah...',
+    imageSvg: `<svg viewBox="0 0 320 150" class="w-64 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="300" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="10" y="10" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="70" y="10" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="130" y="10" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="190" y="10" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="250" y="10" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="10" y="60" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="70" y="60" width="60" height="50" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <rect x="130" y="60" width="60" height="50" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="190" y="60" width="60" height="50" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="250" y="60" width="60" height="50" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="160" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Total 10 petak sama besar (7 diarsir)</text>
+</svg>`,
     options: [
-      { id: 'A', text: '75 km' },
-      { id: 'B', text: '90 km' },
-      { id: 'C', text: '120 km' },
-      { id: 'D', text: '150 km' },
+      { id: 'A', text: '0,07 dan 7%' },
+      { id: 'B', text: '0,7 dan 70%' },
+      { id: 'C', text: '0,35 dan 35%' },
+      { id: 'D', text: '0,7 dan 35%' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Jarak Sebenarnya = Jarak pada Peta ÷ Skala\n= 6 cm × 1.500.000 = 9.000.000 cm.\nUbah cm ke km (dibagi 100.000):\n9.000.000 ÷ 100.000 = 90 km.',
+      'Total petak = 10 bagian sama besar.\nPetak yang diarsir = 7 petak.\nPecahan biasa = 7/10.\nPecahan desimal = 7 ÷ 10 = 0,7.\nBentuk persen = 7/10 × 100% = 70%.',
   },
   {
     id: 6,
     type: 'pg',
-    topic: 'Perbandingan Senilai',
+    topic: 'Mengurutkan Pecahan',
     difficulty: 'Sedang',
-    text: 'Perbandingan umur Ayah dan Dayu adalah 7 : 3. Jika selisih umur Ayah dan Dayu adalah 28 tahun, berapakah jumlah umur Ayah dan Dayu seluruhnya?',
+    text: 'Urutan pecahan: 0,65; 3/4; 70%; 5/8 dari yang terkecil ke terbesar adalah...',
     options: [
-      { id: 'A', text: '56 tahun' },
-      { id: 'B', text: '63 tahun' },
-      { id: 'C', text: '70 tahun' },
-      { id: 'D', text: '77 tahun' },
+      { id: 'A', text: '5/8; 0,65; 70%; 3/4' },
+      { id: 'B', text: '0,65; 5/8; 70%; 3/4' },
+      { id: 'C', text: '5/8; 70%; 0,65; 3/4' },
+      { id: 'D', text: '3/4; 70%; 0,65; 5/8' },
     ],
-    correctAnswer: 'C',
+    correctAnswer: 'A',
     explanation:
-      'Selisih perbandingan = 7 - 3 = 4 bagian.\nNilai 1 bagian = 28 tahun ÷ 4 = 7 tahun.\nJumlah perbandingan = 7 + 3 = 10 bagian.\nJumlah umur = 10 × 7 tahun = 70 tahun.',
+      'Ubah semua pecahan ke bentuk desimal:\n• 0,65 = 0,650\n• 3/4 = 0,750\n• 70% = 0,700\n• 5/8 = 0,625\nUrutan dari terkecil: 0,625 (5/8) < 0,650 (0,65) < 0,700 (70%) < 0,750 (3/4).\nMaka urutan terkecil ke terbesar adalah: 5/8; 0,65; 70%; 3/4.',
   },
   {
     id: 7,
     type: 'pg',
-    topic: 'Kecepatan & Waktu Berpapasan',
-    difficulty: 'Sukar',
-    text: 'Jarak antara kota P dan kota Q adalah 180 km. Pak Made mengendarai mobil dari kota P ke kota Q pada pukul 07.15 dengan kecepatan rata-rata 55 km/jam. Pada saat yang sama, Pak Ketut mengendarai sepeda motor dari kota Q ke kota P melalui jalur yang sama dengan kecepatan rata-rata 35 km/jam. Pukul berapakah mereka akan berpapasan di jalan?',
+    topic: 'Penjumlahan Pecahan',
+    difficulty: 'Mudah',
+    text: 'Hasil penjumlahan dari 2/3 + 3/5 adalah...',
     options: [
-      { id: 'A', text: '08.45' },
-      { id: 'B', text: '09.00' },
-      { id: 'C', text: '09.15' },
-      { id: 'D', text: '09.30' },
+      { id: 'A', text: '5/8' },
+      { id: 'B', text: '1 1/15' },
+      { id: 'C', text: '1 4/15' },
+      { id: 'D', text: '1 2/5' },
     ],
     correctAnswer: 'C',
     explanation:
-      'Waktu berpapasan = Jarak Total ÷ (Kecepatan 1 + Kecepatan 2)\nKecepatan gabungan = 55 km/jam + 35 km/jam = 90 km/jam.\nWaktu = 180 km ÷ 90 km/jam = 2 jam.\nWaktu berpapasan = 07.15 + 2 jam = 09.15.',
+      'Samakan penyebut dengan mencari KPK dari 3 dan 5, yaitu 15:\n2/3 = 10/15\n3/5 = 9/15\n2/3 + 3/5 = 10/15 + 9/15 = 19/15 = 1 4/15.',
   },
   {
     id: 8,
     type: 'pg',
-    topic: 'Debit Air & Volume',
+    topic: 'Pengurangan Pecahan Campuran',
     difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk balok memiliki ukuran panjang 120 cm, lebar 80 cm, dan tinggi 50 cm. Bak tersebut diisi air dari kran yang memiliki debit aliran tetap 20 liter per menit. Waktu yang diperlukan untuk mengisi bak penampungan tersebut dari kosong hingga penuh adalah...',
+    text: 'Hasil pengurangan dari 4 1/2 - 1 3/4 adalah...',
     options: [
-      { id: 'A', text: '18 menit' },
-      { id: 'B', text: '24 menit' },
-      { id: 'C', text: '32 menit' },
-      { id: 'D', text: '48 menit' },
+      { id: 'A', text: '2 1/4' },
+      { id: 'B', text: '2 1/2' },
+      { id: 'C', text: '2 3/4' },
+      { id: 'D', text: '3 1/4' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Volume bak = panjang × lebar × tinggi = 120 cm × 80 cm × 50 cm = 480.000 cm³.\n1 liter = 1.000 cm³, maka Volume = 480.000 ÷ 1.000 = 480 liter.\nWaktu = Volume ÷ Debit = 480 liter ÷ 20 liter/menit = 24 menit.',
+      'Ubah ke pecahan biasa atau samakan penyebut:\n4 1/2 = 9/2 = 18/4\n1 3/4 = 7/4\n18/4 - 7/4 = 11/4 = 2 3/4.\nJadi hasilnya adalah 2 3/4.',
   },
   {
     id: 9,
     type: 'pg',
-    topic: 'Keliling Lingkaran',
+    topic: 'Garis Bilangan Pecahan',
     difficulty: 'Mudah',
-    text: 'Sebuah taman kota di Jembrana berbentuk lingkaran dengan panjang diameter 28 meter. Di sekeliling tepi taman tersebut akan dipasangi lampu penerangan dengan jarak antarlampu 4 meter. Berapa banyak lampu penerangan yang dibutuhkan? (Gunakan π = 22/7)',
+    text: 'Perhatikan garis bilangan pecahan berikut! Titik K menunjukkan letak sebuah pecahan. Bentuk paling sederhana dari pecahan yang ditunjukkan oleh titik K adalah...',
+    imageSvg: `<svg viewBox="0 0 340 120" class="w-72 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <line x1="30" y1="60" x2="310" y2="60" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="45" x2="40" y2="75" stroke="#334155" stroke-width="2.5"/>
+  <text x="40" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">0</text>
+  <line x1="85" y1="50" x2="85" y2="70" stroke="#64748b" stroke-width="2"/>
+  <text x="85" y="95" text-anchor="middle" font-size="11" fill="#64748b">1/6</text>
+  <line x1="130" y1="50" x2="130" y2="70" stroke="#64748b" stroke-width="2"/>
+  <text x="130" y="95" text-anchor="middle" font-size="11" fill="#64748b">2/6</text>
+  <line x1="175" y1="50" x2="175" y2="70" stroke="#64748b" stroke-width="2"/>
+  <text x="175" y="95" text-anchor="middle" font-size="11" fill="#64748b">3/6</text>
+  <line x1="220" y1="45" x2="220" y2="75" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="220" cy="60" r="6" fill="#2563eb"/>
+  <text x="220" y="35" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d4ed8">Titik K</text>
+  <line x1="265" y1="50" x2="265" y2="70" stroke="#64748b" stroke-width="2"/>
+  <text x="265" y="95" text-anchor="middle" font-size="11" fill="#64748b">5/6</text>
+  <line x1="300" y1="45" x2="300" y2="75" stroke="#334155" stroke-width="2.5"/>
+  <text x="300" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">1</text>
+</svg>`,
     options: [
-      { id: 'A', text: '22 buah' },
-      { id: 'B', text: '24 buah' },
-      { id: 'C', text: '28 buah' },
-      { id: 'D', text: '44 buah' },
+      { id: 'A', text: '1/3' },
+      { id: 'B', text: '1/2' },
+      { id: 'C', text: '2/3' },
+      { id: 'D', text: '5/6' },
     ],
-    correctAnswer: 'A',
+    correctAnswer: 'C',
     explanation:
-      'Keliling lingkaran = π × diameter = 22/7 × 28 m = 88 meter.\nBanyak lampu = Keliling ÷ Jarak antarlampu = 88 m ÷ 4 m = 22 buah.',
+      'Jarak dari 0 ke 1 dibagi menjadi 6 bagian sama panjang (tiap ruas berjarak 1/6).\nTitik K berada pada ruas ke-4, yang berarti bernilai 4/6.\nPecahan 4/6 disederhanakan dengan membagi pembilang dan penyebut dengan 2:\n4/6 = (4 ÷ 2) / (6 ÷ 2) = 2/3.',
   },
   {
     id: 10,
     type: 'pg',
-    topic: 'Luas Gabungan Bangun Datar',
+    topic: 'Perkalian Pecahan',
     difficulty: 'Sedang',
-    text: 'Sebuah bidang datar gabungan terdiri dari persegi panjang berukuran panjang 20 cm dan lebar 14 cm, serta sebuah setengah lingkaran yang menempel berhimpit pada sisi lebarnya (diameter setengah lingkaran = 14 cm). Luas total bidang gabungan tersebut adalah... (Gunakan π = 22/7)',
+    text: 'Hasil perkalian dari 5/8 × 2 2/5 adalah...',
     options: [
-      { id: 'A', text: '318 cm²' },
-      { id: 'B', text: '357 cm²' },
-      { id: 'C', text: '394 cm²' },
-      { id: 'D', text: '434 cm²' },
+      { id: 'A', text: '1 1/4' },
+      { id: 'B', text: '1 1/2' },
+      { id: 'C', text: '1 3/4' },
+      { id: 'D', text: '2' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Luas persegi panjang = p × l = 20 cm × 14 cm = 280 cm².\nJari-jari lingkaran (r) = 14 ÷ 2 = 7 cm.\nLuas setengah lingkaran = 1/2 × π × r² = 1/2 × (22/7) × 7 × 7 = 77 cm².\nLuas gabungan = 280 cm² + 77 cm² = 357 cm².',
+      'Ubah pecahan campuran 2 2/5 menjadi pecahan biasa:\n2 2/5 = (2 × 5 + 2) / 5 = 12/5.\nLakukan perkalian:\n5/8 × 12/5 = (5 × 12) / (8 × 5) = 60/40 = 6/4 = 3/2 = 1 1/2.',
   },
   {
     id: 11,
     type: 'pg',
-    topic: 'Volume Bangun Ruang (Tabung)',
-    difficulty: 'Sukar',
-    text: 'Sebuah drum penampung minyak berbentuk tabung memiliki jari-jari alas 35 cm dan tinggi 100 cm. Jika drum tersebut saat ini sudah terisi minyak sebanyak 3/5 bagian, berapa liter minyak yang masih harus dituangkan agar drum tersebut terisi penuh? (Gunakan π = 22/7)',
+    topic: 'Pembagian Pecahan',
+    difficulty: 'Mudah',
+    text: 'Hasil dari 3/4 ÷ 5/6 adalah...',
     options: [
-      { id: 'A', text: '124 liter' },
-      { id: 'B', text: '154 liter' },
-      { id: 'C', text: '231 liter' },
-      { id: 'D', text: '385 liter' },
+      { id: 'A', text: '5/8' },
+      { id: 'B', text: '8/9' },
+      { id: 'C', text: '9/10' },
+      { id: 'D', text: '1 1/8' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Volume tabung penuh = π × r² × t = (22/7) × 35 × 35 × 100 = 385.000 cm³.\n1 liter = 1.000 cm³, maka Volume = 385 liter.\nBagian yang belum terisi = 1 - 3/5 = 2/5 bagian.\nVolume yang harus ditambahkan = 2/5 × 385 liter = 154 liter.',
+      'Pembagian pecahan dihitung dengan mengalikan pecahan pertama dengan kebalikan dari pecahan kedua:\n3/4 ÷ 5/6 = 3/4 × 6/5 = (3 × 6) / (4 × 5) = 18/20 = 9/10.',
   },
   {
     id: 12,
     type: 'pg',
-    topic: 'Luas Permukaan Kubus',
-    difficulty: 'Mudah',
-    text: 'Edo ingin membungkus kotak kado berbentuk kubus dengan kertas kado berwarna emas. Jika panjang rusuk kotak kado tersebut adalah 15 cm, luas minimal kertas kado yang dibutuhkan untuk menutupi seluruh permukaan luar kotak adalah...',
+    topic: 'Pembagian Pecahan & Desimal',
+    difficulty: 'Sedang',
+    text: 'Hasil perhitungan dari 2 1/4 ÷ 0,5 adalah...',
     options: [
-      { id: 'A', text: '900 cm²' },
-      { id: 'B', text: '1.125 cm²' },
-      { id: 'C', text: '1.350 cm²' },
-      { id: 'D', text: '3.375 cm²' },
+      { id: 'A', text: '3,5' },
+      { id: 'B', text: '4,0' },
+      { id: 'C', text: '4,5' },
+      { id: 'D', text: '5,0' },
     ],
     correctAnswer: 'C',
     explanation:
-      'Kubus memiliki 6 sisi persegi yang identik.\nLuas permukaan kubus = 6 × rusuk² = 6 × 15 cm × 15 cm = 6 × 225 cm² = 1.350 cm².',
+      'Ubah ke bentuk pecahan biasa atau desimal:\n2 1/4 = 2,25\n2,25 ÷ 0,5 = 4,5.\nAtau: 9/4 ÷ 1/2 = 9/4 × 2/1 = 18/4 = 9/2 = 4 1/2 = 4,5.',
   },
   {
     id: 13,
     type: 'pg',
-    topic: 'Statistika (Rata-rata / Mean)',
-    difficulty: 'Mudah',
-    text: 'Berikut adalah perolehan nilai ulangan matematika harian dari 8 orang siswa kelas VI: 75, 80, 85, 70, 90, 85, 75, dan 80. Berapakah nilai rata-rata (mean) dari data nilai ulangan tersebut?',
+    topic: 'Operasi Hitung Campuran Pecahan',
+    difficulty: 'Sedang',
+    text: 'Hasil dari 1/2 + 3/4 × 2/3 adalah...',
     options: [
-      { id: 'A', text: '78,5' },
-      { id: 'B', text: '79,0' },
-      { id: 'C', text: '80,0' },
-      { id: 'D', text: '81,5' },
+      { id: 'A', text: '5/6' },
+      { id: 'B', text: '1' },
+      { id: 'C', text: '1 1/4' },
+      { id: 'D', text: '1 1/2' },
     ],
-    correctAnswer: 'C',
+    correctAnswer: 'B',
     explanation:
-      'Jumlah total nilai = 75 + 80 + 85 + 70 + 90 + 85 + 75 + 80 = 640.\nBanyak siswa = 8 orang.\nNilai rata-rata = 640 ÷ 8 = 80,0.',
+      'Berdasarkan urutan operasi hitung matematika, operasi perkalian harus didahulukan daripada penjumlahan:\n3/4 × 2/3 = (3 × 2) / (4 × 3) = 6/12 = 1/2.\nSelanjutnya dijumlahkan:\n1/2 + 1/2 = 2/2 = 1.',
   },
   {
     id: 14,
     type: 'pg',
-    topic: 'Statistika (Median & Modus)',
+    topic: 'Pengurangan Pecahan Kontekstual',
     difficulty: 'Sedang',
-    text: 'Data berat badan (dalam kg) sembilan siswa peserta lomba cerdas cermat adalah sebagai berikut: 34, 36, 35, 34, 37, 36, 35, 36, 38. Nilai median dan modus dari data berat badan tersebut berturut-turut adalah...',
+    text: 'Sebuah gelas ukur mula-mula berisi air sebanyak 3/4 liter seperti tampak pada gambar. Jika Budi menuangkan air tersebut sebanyak 1/3 liter untuk melarutkan pupuk, sisa air di dalam gelas ukur adalah...',
+    imageSvg: `<svg viewBox="0 0 200 240" class="w-44 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="30" width="100" height="170" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="3"/>
+  <rect x="53" y="73" width="94" height="124" rx="4" fill="#60a5fa" opacity="0.65"/>
+  <line x1="120" y1="40" x2="150" y2="40" stroke="#1e293b" stroke-width="2"/>
+  <text x="160" y="44" font-size="11" font-weight="bold" fill="#1e293b">1 L</text>
+  <line x1="125" y1="73" x2="150" y2="73" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="160" y="77" font-size="11" font-weight="bold" fill="#1d4ed8">3/4 L</text>
+  <line x1="125" y1="115" x2="150" y2="115" stroke="#1e293b" stroke-width="2"/>
+  <text x="160" y="119" font-size="11" font-weight="bold" fill="#1e293b">2/4 L</text>
+  <line x1="125" y1="157" x2="150" y2="157" stroke="#1e293b" stroke-width="2"/>
+  <text x="160" y="161" font-size="11" font-weight="bold" fill="#1e293b">1/4 L</text>
+  <line x1="120" y1="199" x2="150" y2="199" stroke="#1e293b" stroke-width="2"/>
+  <text x="160" y="203" font-size="11" font-weight="bold" fill="#1e293b">0</text>
+  <text x="100" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Gelas Ukur (Air = 3/4 L)</text>
+</svg>`,
     options: [
-      { id: 'A', text: '35 kg dan 34 kg' },
-      { id: 'B', text: '36 kg dan 36 kg' },
-      { id: 'C', text: '36 kg dan 35 kg' },
-      { id: 'D', text: '35 kg dan 36 kg' },
+      { id: 'A', text: '1/6 liter' },
+      { id: 'B', text: '1/4 liter' },
+      { id: 'C', text: '5/12 liter' },
+      { id: 'D', text: '7/12 liter' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Urutkan data dari terkecil ke terbesar: 34, 34, 35, 35, 36, 36, 36, 37, 38 (total 9 data).\nMedian (nilai tengah, data ke-5) = 36 kg.\nModus (nilai yang paling sering muncul) = 36 kg (muncul 3 kali).\nJadi, median = 36 kg dan modus = 36 kg.',
+      'Sisa air = Volume mula-mula - Volume yang dituangkan\nSisa air = 3/4 liter - 1/3 liter\nKPK dari 4 dan 3 adalah 12:\n3/4 = 9/12\n1/3 = 4/12\n9/12 - 4/12 = 5/12 liter.',
   },
   {
     id: 15,
     type: 'pg',
-    topic: 'Aritmatika Sosial (Diskon)',
-    difficulty: 'Mudah',
-    text: 'Dalam rangka Hari Belanja Pendidikan, Toko Seragam Pelajar memberikan potongan harga (diskon) sebesar 25% untuk sepasang sepatu sekolah. Jika harga sepasang sepatu sebelum diskon adalah Rp160.000,00, berapakah jumlah uang yang harus dibayarkan oleh pembeli?',
+    topic: 'Soal Cerita Pembagian Pecahan',
+    difficulty: 'Sedang',
+    text: 'Rina memiliki seutas pita sepanjang 4 1/2 meter. Pita tersebut dipotong-potong menjadi beberapa helai yang sama panjang untuk menghias kotak kado. Jika setiap kotak kado memerlukan pita sepanjang 3/4 meter, berapa banyak kado yang dapat dihias oleh Rina?',
     options: [
-      { id: 'A', text: 'Rp110.000,00' },
-      { id: 'B', text: 'Rp120.000,00' },
-      { id: 'C', text: 'Rp125.000,00' },
-      { id: 'D', text: 'Rp135.000,00' },
+      { id: 'A', text: '4 kado' },
+      { id: 'B', text: '5 kado' },
+      { id: 'C', text: '6 kado' },
+      { id: 'D', text: '7 kado' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Besar diskon = 25% × Rp160.000,00 = (25/100) × 160.000 = Rp40.000,00.\nHarga setelah diskon = Rp160.000,00 - Rp40.000,00 = Rp120.000,00.',
+      'Banyak kado = Total panjang pita ÷ Panjang pita per kado\n= 4 1/2 ÷ 3/4\n= 9/2 ÷ 3/4\n= 9/2 × 4/3\n= (9 × 4) / (2 × 3) = 36/6 = 6 kado.',
   },
   {
     id: 16,
     type: 'pg',
-    topic: 'Pengolahan Data (Diagram Lingkaran)',
+    topic: 'Persentase & Diskon Pecahan',
     difficulty: 'Sedang',
-    text: 'Sebuah diagram lingkaran menunjukkan pilihan kegiatan ekstrakurikuler dari 120 siswa kelas VI di Sekolah Dasar: Pramuka 35%, Bulu Tangkis 25%, Seni Tari 15%, dan sisanya Robotika. Berapakah banyak siswa yang memilih ekstrakurikuler Robotika?',
+    text: 'Harga sebuah tas sekolah adalah Rp120.000,00. Toko memberikan potongan harga (diskon) sebesar 25%. Berapakah harga tas yang harus dibayar pembeli setelah mendapat potongan harga?',
     options: [
-      { id: 'A', text: '24 siswa' },
-      { id: 'B', text: '30 siswa' },
-      { id: 'C', text: '36 siswa' },
-      { id: 'D', text: '42 siswa' },
+      { id: 'A', text: 'Rp85.000,00' },
+      { id: 'B', text: 'Rp90.000,00' },
+      { id: 'C', text: 'Rp95.000,00' },
+      { id: 'D', text: 'Rp100.000,00' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Total persentase satu lingkaran penuh = 100%.\nPersentase Robotika = 100% - (35% + 25% + 15%) = 100% - 75% = 25%.\nBanyak siswa Robotika = 25% × 120 siswa = (25/100) × 120 = 30 siswa.',
+      'Diskon = 25% = 25/100 = 1/4.\nBesar potongan harga = 1/4 × Rp120.000,00 = Rp30.000,00.\nHarga yang harus dibayar = Rp120.000,00 - Rp30.000,00 = Rp90.000,00.\n(Atau: pembeli membayar 75% = 3/4 × Rp120.000,00 = Rp90.000,00).',
   },
   {
     id: 17,
     type: 'pg',
-    topic: 'Pangkat dan Akar Pangkat Tiga',
-    difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk kubus memiliki volume 91.125 cm³. Panjang rusuk bagian dalam bak kubus tersebut adalah...',
+    topic: 'Soal Cerita Bagian Luas',
+    difficulty: 'Sukar',
+    text: 'Pak Budi memiliki sebidang kebun seluas 600 m². Sebanyak 1/3 bagian kebun ditanami jagung, 2/5 bagian dibuat kolam ikan, dan sisanya ditanami rumput gajah. Luas kebun yang ditanami rumput gajah adalah...',
     options: [
-      { id: 'A', text: '35 cm' },
-      { id: 'B', text: '45 cm' },
-      { id: 'C', text: '55 cm' },
-      { id: 'D', text: '65 cm' },
+      { id: 'A', text: '120 m²' },
+      { id: 'B', text: '140 m²' },
+      { id: 'C', text: '160 m²' },
+      { id: 'D', text: '180 m²' },
     ],
-    correctAnswer: 'B',
+    correctAnswer: 'C',
     explanation:
-      'Panjang rusuk = ∛Volume = ∛91.125.\nPerhatikan akhiran angka 5, akar satuannya adalah 5.\nKelompok ribuan 91 berada di antara 4³ = 64 dan 5³ = 125, sehingga puluhannya adalah 4.\nJadi ∛91.125 = 45 cm.',
+      '• Luas lahan jagung = 1/3 × 600 m² = 200 m²\n• Luas kolam ikan = 2/5 × 600 m² = 240 m²\n• Total lahan terpakai = 200 m² + 240 m² = 440 m²\n• Luas rumput gajah = 600 m² - 440 m² = 160 m².\n(Atau pecahan sisa: 1 - 1/3 - 2/5 = 15/15 - 5/15 - 6/15 = 4/15 bagian. 4/15 × 600 = 160 m²).',
   },
   {
     id: 18,
     type: 'pg',
-    topic: 'Konversi Satuan Kecepatan',
-    difficulty: 'Sedang',
-    text: 'Seorang pelari maraton cilik melintasi jalan raya sejauh 3,6 kilometer dalam waktu 15 menit. Kecepatan rata-rata pelari tersebut bila dinyatakan dalam satuan meter per detik (m/s) adalah...',
+    topic: 'Representasi Visual Pecahan Bagian',
+    difficulty: 'Mudah',
+    text: 'Sebatang cokelat terdiri dari 12 petak seperti tampak pada gambar di bawah ini. Adik memakan 5 petak cokelat dan Kakak memakan 4 petak cokelat. Pecahan paling sederhana yang menyatakan sisa cokelat yang belum dimakan adalah...',
+    imageSvg: `<svg viewBox="0 0 300 180" class="w-64 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <rect x="15" y="15" width="270" height="120" rx="8" fill="#78350f" stroke="#451a03" stroke-width="3"/>
+  <rect x="23" y="23" width="58" height="32" rx="4" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="87" y="23" width="58" height="32" rx="4" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="151" y="23" width="58" height="32" rx="4" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="215" y="23" width="58" height="32" rx="4" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="23" y="59" width="58" height="32" rx="4" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+  <rect x="87" y="59" width="58" height="32" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+  <rect x="151" y="59" width="58" height="32" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+  <rect x="215" y="59" width="58" height="32" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+  <rect x="23" y="95" width="58" height="32" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+  <rect x="87" y="95" width="58" height="32" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="151" y="95" width="58" height="32" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="215" y="95" width="58" height="32" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="150" y="160" text-anchor="middle" font-size="11" font-weight="bold" fill="#334155">Cokelat Batang: 5 Dimakan Adik, 4 Dimakan Kakak</text>
+</svg>`,
     options: [
-      { id: 'A', text: '3 m/s' },
-      { id: 'B', text: '4 m/s' },
-      { id: 'C', text: '5 m/s' },
-      { id: 'D', text: '6 m/s' },
+      { id: 'A', text: '1/6' },
+      { id: 'B', text: '1/4' },
+      { id: 'C', text: '1/3' },
+      { id: 'D', text: '5/12' },
     ],
     correctAnswer: 'B',
     explanation:
-      'Jarak = 3,6 km = 3,6 × 1.000 meter = 3.600 meter.\nWaktu = 15 menit = 15 × 60 detik = 900 detik.\nKecepatan = Jarak ÷ Waktu = 3.600 m ÷ 900 s = 4 m/s.',
+      'Total petak cokelat = 12 petak.\nBagian yang dimakan = 5 petak (Adik) + 4 petak (Kakak) = 9 petak.\nSisa petak cokelat = 12 - 9 = 3 petak.\nNilai pecahan sisa = 3/12.\nBentuk paling sederhana = (3 ÷ 3) / (12 ÷ 3) = 1/4.',
   },
-
-  // --- PILIHAN GANDA KOMPLEKS (3 SOAL) ---
-  // Ketentuan: Kemungkinan lebih dari 1 pilihan jawaban benar, setiap soal memiliki 3 pilihan jawaban
   {
     id: 19,
-    type: 'pgk',
-    topic: 'Sifat-Sifat Bangun Datar',
-    difficulty: 'Sedang',
-    text: 'Perhatikan sifat-sifat bangun datar layang-layang berikut. Pilihlah SEMUA pernyataan yang BENAR mengenai bangun datar layang-layang! (Pilihan benar bisa lebih dari satu)',
+    type: 'pg',
+    topic: 'Penjumlahan Desimal',
+    difficulty: 'Mudah',
+    text: 'Ibu membeli 3 kantong gula pasir dengan berat masing-masing 1,75 kg, 2,4 kg, dan 0,85 kg. Berat total seluruh gula pasir yang dibeli ibu adalah...',
     options: [
-      { id: 'A', text: 'Mempunyai dua pasang sisi yang sama panjang dan berdekatan' },
-      { id: 'B', text: 'Kedua diagonalnya saling berpotongan tegak lurus (membentuk sudut 90°)' },
-      { id: 'C', text: 'Mempunyai dua pasang sudut berhadapan yang sama besar' },
+      { id: 'A', text: '4,85 kg' },
+      { id: 'B', text: '4,95 kg' },
+      { id: 'C', text: '5,00 kg' },
+      { id: 'D', text: '5,15 kg' },
     ],
-    correctAnswer: ['A', 'B'],
+    correctAnswer: 'C',
     explanation:
-      'Sifat layang-layang:\n- Memiliki 2 pasang sisi berdekatan yang sama panjang (Benar - A)\n- Kedua diagonal berpotongan tegak lurus (Benar - B)\n- Memiliki TEPAT SATU pasang sudut berhadapan yang sama besar, bukan dua pasang (C Salah).\nJadi pilihan yang benar adalah A dan B.',
+      'Lakukan penjumlahan pecahan desimal secara bersusun dengan meluruskan tanda koma:\n  1,75\n  2,40\n  0,85\n------ +\n  5,00 kg (atau 5 kg).',
   },
   {
     id: 20,
-    type: 'pgk',
-    topic: 'Keliling, Luas, & Aritmatika',
-    difficulty: 'Sukar',
-    text: 'Pak Budi memiliki sebidang tanah kebun berbentuk persegi panjang dengan ukuran panjang 24 meter dan lebar 16 meter. Manakah dari pernyataan-pernyataan berikut yang bernilai BENAR? (Pilihan benar bisa lebih dari satu)',
+    type: 'pg',
+    topic: 'Pecahan Bagian dari Kumpulan Benda',
+    difficulty: 'Sedang',
+    text: 'Di dalam sebuah keranjang terdapat 40 butir buah yang terdiri dari jeruk dan apel. Jika banyak jeruk adalah 3/8 dari total seluruh buah, maka banyak buah apel di dalam keranjang tersebut adalah...',
     options: [
-      { id: 'A', text: 'Luas tanah kebun Pak Budi adalah 384 meter persegi (m²)' },
-      { id: 'B', text: 'Keliling tanah kebun Pak Budi adalah 80 meter' },
-      { id: 'C', text: 'Jika tanah tersebut dijual dengan harga Rp500.000,00 per m², maka total uang hasil penjualan tanah adalah Rp192.000.000,00' },
+      { id: 'A', text: '15 butir' },
+      { id: 'B', text: '20 butir' },
+      { id: 'C', text: '25 butir' },
+      { id: 'D', text: '30 butir' },
     ],
-    correctAnswer: ['A', 'B', 'C'],
+    correctAnswer: 'C',
     explanation:
-      'Perhitungan:\n- Luas = panjang × lebar = 24 m × 16 m = 384 m² (Benar - A)\n- Keliling = 2 × (p + l) = 2 × (24 + 16) = 2 × 40 = 80 meter (Benar - B)\n- Total harga jual = 384 m² × Rp500.000 = Rp192.000.000,00 (Benar - C).\nKetiga pernyataan bernilai benar.',
+      'Banyak jeruk = 3/8 × 40 = 15 butir.\nBanyak apel = Total buah - Banyak jeruk\n= 40 - 15 = 25 butir.\n(Atau: bagian apel = 1 - 3/8 = 5/8 bagian. 5/8 × 40 = 25 butir).',
   },
+
+  // =========================================================================
+  // PILIHAN GANDA KOMPLEKS (5 BUTIR SOAL: NO. 21 - 25)
+  // Setiap soal memiliki 3 pilihan jawaban (A, B, C).
+  // Kemungkinan lebih dari 1 pilihan jawaban benar.
+  // =========================================================================
   {
     id: 21,
     type: 'pgk',
-    topic: 'Operasi Hitung Campuran & Satuan Berat',
+    topic: 'Pecahan Senilai',
     difficulty: 'Sedang',
-    text: 'Ibu berbelanja ke pasar membeli 3 kantong beras yang masing-masing seberat 2,5 kg dan 4 kantong gula pasir yang masing-masing seberat 0,75 kg. Manakah dari pernyataan-pernyataan berikut yang bernilai BENAR? (Pilihan jawaban benar bisa lebih dari satu)',
+    text: 'Pilihlah semua bentuk pecahan atau persentase di bawah ini yang memiliki nilai sama dengan 3/4! (Jawaban benar dapat lebih dari satu pilihan)',
     options: [
-      { id: 'A', text: 'Total berat seluruh beras yang dibeli Ibu adalah 7,5 kg' },
-      { id: 'B', text: 'Total berat seluruh gula pasir yang dibeli Ibu adalah 3,0 kg' },
-      { id: 'C', text: 'Total berat seluruh belanjaan beras dan gula pasir Ibu adalah 11,5 kg' },
+      { id: 'A', text: '0,75' },
+      { id: 'B', text: '75%' },
+      { id: 'C', text: '15/25' },
     ],
     correctAnswer: ['A', 'B'],
     explanation:
-      'Perhitungan belanjaan Ibu:\n- Berat beras = 3 × 2,5 kg = 7,5 kg (Benar - A)\n- Berat gula pasir = 4 × 0,75 kg = 3,0 kg (Benar - B)\n- Total berat belanjaan = 7,5 kg + 3,0 kg = 10,5 kg (C Salah, karena pada opsi tertulis 11,5 kg).\nJadi pernyataan yang bernilai benar adalah A dan B.',
+      '• 3/4 diubah ke desimal: 3 ÷ 4 = 0,75 (Pilihan A BENAR)\n• 3/4 diubah ke persen: 3/4 × 100% = 75% (Pilihan B BENAR)\n• 15/25 disederhanakan: 3/5 = 0,60 atau 60%, bukan 3/4 (Pilihan C SALAH).',
   },
-
-  // --- PILIHAN GANDA KOMPLEKS KATEGORI (9 SOAL) ---
-  // Ketentuan: Setiap soal memiliki 3 deskripsi/pernyataan yang harus direspons Benar / Salah
   {
     id: 22,
-    type: 'pgk_kategori',
-    topic: 'Aritmatika Sosial (Bruto, Neto, Tara, & Laba)',
-    difficulty: 'Sukar',
-    text: 'Seorang pedagang buah membeli 5 keranjang buah mangga di pasar induk. Setiap keranjang memiliki berat kotor (bruto) 40 kg dengan tara 5%. Harga beli mangga adalah Rp12.000,00 per kg neto. Seluruh mangga tersebut kemudian dijual kembali secara eceran dengan harga Rp15.000,00 per kg. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Berat bersih (neto) seluruh buah mangga dari 5 keranjang tersebut adalah 190 kg.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Total modal yang dikeluarkan pedagang untuk membeli seluruh mangga neto adalah Rp2.400.000,00.',
-        correctAnswer: false,
-      },
-      {
-        id: 's3',
-        text: 'Keuntungan bersih yang diperoleh pedagang apabila seluruh mangga laku terjual adalah Rp570.000,00.',
-        correctAnswer: true,
-      },
+    type: 'pgk',
+    topic: 'Perbandingan Visual Pecahan',
+    difficulty: 'Sedang',
+    text: 'Perhatikan dua bangun persegi yang diarsir pada gambar berikut! Pilihlah pernyataan yang bernilai BENAR terkait kedua gambar tersebut! (Jawaban benar dapat lebih dari satu pilihan)',
+    imageSvg: `<svg viewBox="0 0 320 160" class="w-72 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="100" height="100" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+    <rect x="0" y="0" width="50" height="100" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+    <line x1="50" y1="0" x2="50" y2="100" stroke="#1e293b" stroke-width="1.5"/>
+    <line x1="0" y1="50" x2="100" y2="50" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Persegi I (2/4)</text>
+  </g>
+  <g transform="translate(190, 20)">
+    <rect x="0" y="0" width="100" height="100" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+    <rect x="0" y="0" width="50" height="100" fill="#10b981" stroke="#047857" stroke-width="1.5"/>
+    <line x1="25" y1="0" x2="25" y2="100" stroke="#1e293b" stroke-width="1"/>
+    <line x1="50" y1="0" x2="50" y2="100" stroke="#1e293b" stroke-width="1.5"/>
+    <line x1="75" y1="0" x2="75" y2="100" stroke="#1e293b" stroke-width="1"/>
+    <line x1="0" y1="50" x2="100" y2="50" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Persegi II (4/8)</text>
+  </g>
+</svg>`,
+    options: [
+      { id: 'A', text: 'Luas daerah yang diarsir pada Persegi I bernilai 1/2 dari luas persegi utuh.' },
+      { id: 'B', text: 'Nilai pecahan daerah arsiran Persegi I senilai dengan arsiran Persegi II.' },
+      { id: 'C', text: 'Daerah arsiran Persegi II lebih kecil daripada daerah arsiran Persegi I.' },
     ],
+    correctAnswer: ['A', 'B'],
     explanation:
-      '1. Tara tiap keranjang = 5% × 40 kg = 2 kg. Neto tiap keranjang = 40 - 2 = 38 kg. Total neto 5 keranjang = 5 × 38 = 190 kg (BENAR).\n2. Modal pembelian = 190 kg × Rp12.000 = Rp2.280.000,00 (SALAH, tertulis Rp2.400.000).\n3. Total hasil penjualan = 190 kg × Rp15.000 = Rp2.850.000,00. Keuntungan = Rp2.850.000 - Rp2.280.000 = Rp570.000,00 (BENAR).',
+      '• Persegi I membagi bangun jadi 4 petak dengan 2 petak diarsir: 2/4 = 1/2 (Pernyataan A BENAR).\n• Persegi II membagi bangun jadi 8 petak dengan 4 petak diarsir: 4/8 = 1/2. Karena 2/4 = 4/8, kedua arsiran bernilai senilai (Pernyataan B BENAR).\n• Karena nilainya sama besar, pernyataan C SALAH.',
   },
   {
     id: 23,
-    type: 'pgk_kategori',
-    topic: 'Statistika & Analisis KKTP',
-    difficulty: 'Sedang',
-    text: 'Berikut disajikan data rekap nilai ulangan matematika dari 30 siswa kelas VI Sekolah Dasar:\n• Nilai 60 diperoleh oleh 3 siswa\n• Nilai 70 diperoleh oleh 7 siswa\n• Nilai 80 diperoleh oleh 12 siswa\n• Nilai 90 diperoleh oleh 6 siswa\n• Nilai 100 diperoleh oleh 2 siswa\nKKTP mata pelajaran matematika yang ditetapkan sekolah adalah 70. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Modus dari perolehan nilai matematika siswa kelas VI tersebut adalah 80.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Banyak siswa yang telah berhasil mencapai atau melampaui KKTP (nilai ≥ 70) adalah sebanyak 27 siswa.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Persentase siswa yang belum mencapai KKTP terhadap seluruh siswa di kelas adalah sebesar 15%.',
-        correctAnswer: false,
-      },
+    type: 'pgk',
+    topic: 'Operasi Penjumlahan & Pengurangan',
+    difficulty: 'Sukar',
+    text: 'Manakah dari operasi hitung pecahan berikut yang menghasilkan nilai LEBIH DARI 1? (Pilihlah seluruh jawaban yang benar)',
+    options: [
+      { id: 'A', text: '2/3 + 1/2' },
+      { id: 'B', text: '3/4 + 1/3' },
+      { id: 'C', text: '1 1/4 - 1/3' },
     ],
+    correctAnswer: ['A', 'B'],
     explanation:
-      '1. Modus adalah data dengan frekuensi tertinggi, yaitu nilai 80 sebanyak 12 siswa (BENAR).\n2. Siswa tuntas (≥70) = 7 + 12 + 6 + 2 = 27 siswa (BENAR).\n3. Siswa belum tuntas (<70) = 3 orang. Persentase = (3 ÷ 30) × 100% = 10% (SALAH, tertulis 15%).',
+      '• A: 2/3 + 1/2 = 4/6 + 3/6 = 7/6 = 1 1/6 (Lebih dari 1 -> BENAR)\n• B: 3/4 + 1/3 = 9/12 + 4/12 = 13/12 = 1 1/12 (Lebih dari 1 -> BENAR)\n• C: 1 1/4 - 1/3 = 5/4 - 1/3 = 15/12 - 4/12 = 11/12 (Kurang dari 1 -> SALAH).',
   },
   {
     id: 24,
-    type: 'pgk_kategori',
-    topic: 'Volume Bangun Ruang (Balok) & Satuan Liter',
+    type: 'pgk',
+    topic: 'Pecahan dan Bentuk Desimal',
     difficulty: 'Sedang',
-    text: 'Sebuah bak penampungan air berbentuk balok di sekolah memiliki ukuran panjang 150 cm, lebar 80 cm, dan tinggi 100 cm. Bak tersebut pada mulanya kosong kemudian diisi air hingga mencapai 3/4 dari kapasitas totalnya. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Volume total bak penampungan air tersebut jika terisi penuh adalah 1.200 liter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Volume air yang ada di dalam bak saat ini adalah 900 liter.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Volume air yang masih harus ditambahkan agar bak terisi penuh adalah 350 liter.',
-        correctAnswer: false,
-      },
+    text: 'Manakah pasangan pecahan biasa dan pecahan desimal berikut yang bernilai TEPAT? (Pilihlah semua jawaban yang benar)',
+    options: [
+      { id: 'A', text: '1/8 = 0,125' },
+      { id: 'B', text: '2/5 = 0,40' },
+      { id: 'C', text: '3/8 = 0,350' },
     ],
+    correctAnswer: ['A', 'B'],
     explanation:
-      '1. Volume bak penuh = 150 cm × 80 cm × 100 cm = 1.200.000 cm³ = 1.200 liter (BENAR).\n2. Volume air saat ini (3/4 bagian) = 3/4 × 1.200 liter = 900 liter (BENAR).\n3. Air yang masih harus ditambahkan = 1.200 liter - 900 liter = 300 liter (SALAH, tertulis 350 liter).',
+      '• 1/8 = 1 ÷ 8 = 0,125 (BENAR)\n• 2/5 = 4/10 = 0,4 = 0,40 (BENAR)\n• 3/8 = 3 ÷ 8 = 0,375, bukan 0,350 (SALAH).',
   },
   {
     id: 25,
-    type: 'pgk_kategori',
-    topic: 'Geometri Lingkaran (Keliling & Luas)',
+    type: 'pgk',
+    topic: 'Soal Cerita Persediaan Bahan',
     difficulty: 'Sedang',
-    text: 'Sebuah meja hias bundar memiliki permukaan berbentuk lingkaran dengan panjang diameter 140 cm. Di sekeliling tepi meja akan dipasang pita renda hias, dan seluruh permukaan meja akan ditutup dengan kaca bening. (Gunakan π = 22/7). Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Panjang jari-jari permukaan meja bundar tersebut adalah 70 cm.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Panjang pita renda hias minimal yang dibutuhkan untuk mengelilingi meja adalah 440 cm.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Luas permukaan kaca bening penutup meja tersebut adalah 15.400 cm².',
-        correctAnswer: true,
-      },
+    text: 'Ibu memiliki persediaan tepung terigu sebanyak 1 1/2 kg. Ibu membeli lagi tepung terigu sebanyak 2,25 kg. Kemudian sebanyak 2 1/4 kg digunakan untuk membuat bolu kukus. Pilihlah pernyataan yang BENAR mengenai tepung terigu Ibu! (Jawaban benar dapat lebih dari satu pilihan)',
+    options: [
+      { id: 'A', text: 'Total tepung terigu setelah membeli tambahan adalah 3,75 kg.' },
+      { id: 'B', text: 'Sisa tepung terigu yang masih dimiliki Ibu adalah 1 1/2 kg.' },
+      { id: 'C', text: 'Sisa tepung terigu yang masih dimiliki Ibu adalah 1,25 kg.' },
     ],
+    correctAnswer: ['A', 'B'],
     explanation:
-      '1. Jari-jari meja (r) = diameter ÷ 2 = 140 ÷ 2 = 70 cm (BENAR).\n2. Keliling meja = π × d = 22/7 × 140 cm = 440 cm (BENAR).\n3. Luas permukaan meja = π × r² = 22/7 × 70 × 70 = 15.400 cm² (BENAR).',
+      '• Tepung awal + tambahan = 1,5 kg + 2,25 kg = 3,75 kg (Pernyataan A BENAR).\n• Tepung yang digunakan = 2 1/4 kg = 2,25 kg.\n• Sisa tepung = 3,75 kg - 2,25 kg = 1,5 kg atau 1 1/2 kg (Pernyataan B BENAR).\n• Pernyataan C bernilai SALAH karena sisa tepung adalah 1,5 kg, bukan 1,25 kg.',
   },
+
+  // =========================================================================
+  // PILIHAN GANDA KOMPLEKS KATEGORI (10 BUTIR SOAL: NO. 26 - 35)
+  // Setiap butir soal memuat 3 pernyataan yang direspons Benar atau Salah.
+  // =========================================================================
   {
     id: 26,
     type: 'pgk_kategori',
-    topic: 'Skala, Denah, & Luas Sebenarnya',
-    difficulty: 'Sedang',
-    text: 'Denah lapangan upacara di Sekolah Dasar digambar dengan skala 1 : 400. Pada denah tersebut, lapangan digambarkan berbentuk persegi panjang dengan ukuran panjang 12 cm dan lebar 8 cm. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
+    topic: 'Konsep Dasar Pecahan',
+    difficulty: 'Mudah',
+    text: 'Tentukan kebenaran (Benar / Salah) untuk setiap pernyataan mengenai konsep pecahan di bawah ini!',
     statements: [
       {
         id: 's1',
-        text: 'Panjang sebenarnya dari lapangan upacara tersebut adalah 48 meter.',
+        text: 'Pada pecahan 5/9, angka 5 disebut sebagai pembilang dan angka 9 disebut sebagai penyebut.',
         correctAnswer: true,
       },
       {
         id: 's2',
-        text: 'Lebar sebenarnya dari lapangan upacara tersebut adalah 32 meter.',
-        correctAnswer: true,
+        text: 'Pecahan 7/4 merupakan contoh dari pecahan murni.',
+        correctAnswer: false,
       },
       {
         id: 's3',
-        text: 'Luas sebenarnya dari lapangan upacara tersebut adalah 1.536 meter persegi (m²).',
+        text: 'Pecahan campuran 2 3/5 memiliki nilai yang sama dengan pecahan biasa 13/5.',
         correctAnswer: true,
       },
     ],
     explanation:
-      '1. Panjang sebenarnya = 12 cm × 400 = 4.800 cm = 48 meter (BENAR).\n2. Lebar sebenarnya = 8 cm × 400 = 3.200 cm = 32 meter (BENAR).\n3. Luas sebenarnya = 48 m × 32 m = 1.536 m² (BENAR).',
+      '1. Benar: Pada a/b, a adalah pembilang dan b adalah penyebut.\n2. Salah: Pecahan murni memiliki pembilang lebih kecil dari penyebut. Karena 7 > 4, maka 7/4 merupakan pecahan tidak murni.\n3. Benar: 2 3/5 = (2 × 5 + 3) / 5 = 13/5.',
   },
   {
     id: 27,
     type: 'pgk_kategori',
-    topic: 'Jarak, Waktu Tempuh, & Kecepatan',
-    difficulty: 'Sukar',
-    text: 'Sebuah bus pariwisata membawa rombongan siswa kelas VI menempuh perjalanan dari sekolah ke tempat wisata sejauh 120 km. Bus berangkat pada pukul 06.30 dan tiba di lokasi tujuan pada pukul 09.00. Selama dalam perjalanan, bus sempat berhenti di rest area selama 30 menit untuk istirahat. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
+    topic: 'Representasi Pecahan Segi Enam',
+    difficulty: 'Mudah',
+    text: 'Perhatikan gambar segi enam beraturan yang terbagi menjadi 6 segitiga sama besar berikut! Tentukan Benar atau Salah untuk setiap pernyataan di bawah ini!',
+    imageSvg: `<svg viewBox="0 0 240 200" class="w-52 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(120, 95)">
+    <polygon points="0,0 75,0 37.5,64.95" fill="#8b5cf6" stroke="#5b21b6" stroke-width="2"/>
+    <polygon points="0,0 37.5,64.95 -37.5,64.95" fill="#8b5cf6" stroke="#5b21b6" stroke-width="2"/>
+    <polygon points="0,0 -37.5,64.95 -75,0" fill="#8b5cf6" stroke="#5b21b6" stroke-width="2"/>
+    <polygon points="0,0 -75,0 -37.5,-64.95" fill="#8b5cf6" stroke="#5b21b6" stroke-width="2"/>
+    <polygon points="0,0 -37.5,-64.95 37.5,-64.95" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="0,0 37.5,-64.95 75,0" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+  <text x="120" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Segi Enam (4 dari 6 bagian diarsir)</text>
+</svg>`,
     statements: [
       {
         id: 's1',
-        text: 'Total waktu perjalanan dari waktu berangkat hingga tiba di tujuan adalah 2 jam 30 menit.',
+        text: 'Bagian yang diarsir bernilai 4/6 dari luas seluruh segi enam.',
         correctAnswer: true,
       },
       {
         id: 's2',
-        text: 'Waktu murni bus berjalan (melaju) di jalan raya adalah 2 jam.',
+        text: 'Bentuk paling sederhana dari pecahan bagian yang diarsir adalah 2/3.',
         correctAnswer: true,
       },
       {
         id: 's3',
-        text: 'Kecepatan rata-rata bus saat sedang melaju di jalan raya adalah 50 km/jam.',
+        text: 'Bagian yang TIDAK diarsir bernilai 50% dari luas seluruh gambar segi enam.',
         correctAnswer: false,
       },
     ],
     explanation:
-      '1. Waktu tempuh total = 09.00 - 06.30 = 2 jam 30 menit (BENAR).\n2. Waktu gerak murni = 2 jam 30 menit - 30 menit istirahat = 2 jam (BENAR).\n3. Kecepatan rata-rata bus saat melaju = Jarak ÷ Waktu gerak = 120 km ÷ 2 jam = 60 km/jam (SALAH, tertulis 50 km/jam).',
+      '1. Benar: Terdapat 4 segitiga diarsir dari total 6 segitiga sama besar (4/6 bagian).\n2. Benar: 4/6 disederhanakan dengan membagi 2 menjadi 2/3.\n3. Salah: Bagian yang tidak diarsir adalah 2/6 = 1/3 bagian ≈ 33,33%, bukan 50%.',
   },
   {
     id: 28,
     type: 'pgk_kategori',
-    topic: 'Operasi Pecahan & Persentase',
-    difficulty: 'Mudah',
-    text: 'Koperasi Siswa memiliki persediaan awal buku tulis sebanyak 200 buah. Pada hari Senin, terjual 30% dari persediaan awal tersebut. Pada hari Selasa, terjual 2/5 bagian dari persediaan awal. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
+    topic: 'Perbandingan dan Urutan Pecahan',
+    difficulty: 'Sedang',
+    text: 'Tentukan Benar atau Salah untuk setiap pernyataan perbandingan nilai bilangan berikut!',
     statements: [
       {
         id: 's1',
-        text: 'Banyak buku tulis yang terjual pada hari Senin adalah 60 buah.',
+        text: 'Pecahan 3/5 bernilai lebih besar daripada pecahan 4/7.',
         correctAnswer: true,
       },
       {
         id: 's2',
-        text: 'Banyak buku tulis yang terjual pada hari Selasa adalah 80 buah.',
-        correctAnswer: true,
+        text: 'Bilangan desimal 0,45 bernilai lebih kecil daripada 40%.',
+        correctAnswer: false,
       },
       {
         id: 's3',
-        text: 'Sisa buku tulis di koperasi siswa setelah hari Selasa adalah sebanyak 70 buah.',
-        correctAnswer: false,
+        text: 'Pada garis bilangan, letak pecahan 5/6 berada di antara 1/2 dan 1.',
+        correctAnswer: true,
       },
     ],
     explanation:
-      '1. Penjualan hari Senin = 30% × 200 = 60 buku (BENAR).\n2. Penjualan hari Selasa = 2/5 × 200 = 80 buku (BENAR).\n3. Sisa buku = 200 - (60 + 80) = 200 - 140 = 60 buku (SALAH, tertulis 70 buah).',
+      '1. Benar: 3/5 = 21/35 dan 4/7 = 20/35. Karena 21/35 > 20/35, maka 3/5 > 4/7.\n2. Salah: 0,45 = 45%. Karena 45% > 40%, maka 0,45 lebih besar dari 40%.\n3. Benar: 1/2 = 3/6 dan 1 = 6/6. Karena 3/6 < 5/6 < 6/6, maka 5/6 terletak di antara 1/2 dan 1.',
   },
   {
     id: 29,
     type: 'pgk_kategori',
-    topic: 'FPB & Penerapan Pembagian Paket',
+    topic: 'Operasi Penjumlahan & Pengurangan',
     difficulty: 'Sedang',
-    text: 'Pak Guru menyiapkan 36 penggaris, 54 bolpoin, dan 72 buku gambar sebagai paket hadiah lomba kebersihan kelas. Paket-paket tersebut akan dibagikan kepada sebanyak-banyaknya regu dengan isi masing-masing jenis barang yang sama banyak. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
+    text: 'Tentukan Benar atau Salah untuk setiap hasil operasi hitung pecahan berikut!',
     statements: [
       {
         id: 's1',
-        text: 'Faktor Persekutuan Terbesar (FPB) dari 36, 54, dan 72 adalah 18.',
+        text: 'Hasil dari 3/8 + 1/8 adalah 1/2.',
         correctAnswer: true,
       },
       {
         id: 's2',
-        text: 'Banyak regu terbanyak yang dapat menerima paket hadiah tersebut adalah 18 regu.',
+        text: 'Hasil dari 5/6 - 1/3 adalah 1/2.',
         correctAnswer: true,
       },
       {
         id: 's3',
-        text: 'Setiap regu akan menerima paket hadiah berupa 2 penggaris, 3 bolpoin, dan 4 buku gambar.',
-        correctAnswer: true,
-      },
-    ],
-    explanation:
-      '1. FPB dari 36, 54, dan 72: 36 = 2² × 3²; 54 = 2 × 3³; 72 = 2³ × 3². FPB = 2 × 3² = 18 (BENAR).\n2. Jumlah regu terbanyak penerima hadiah = FPB = 18 regu (BENAR).\n3. Isi setiap regu: Penggaris = 36 ÷ 18 = 2 buah, Bolpoin = 54 ÷ 18 = 3 buah, Buku gambar = 72 ÷ 18 = 4 buah (BENAR).',
-  },
-  {
-    id: 30,
-    type: 'pgk_kategori',
-    topic: 'Koordinat Kartesius & Geometri',
-    difficulty: 'Sukar',
-    text: 'Pada bidang koordinat Kartesius, digambar empat titik sudut yaitu: titik A(-2, 1), titik B(4, 1), titik C(4, 5), dan titik D(-2, 5). Keempat titik tersebut dihubungkan dengan garis lurus berurutan membentuk bangun datar segiempat ABCD. Tentukan kebenaran dari masing-masing pernyataan berikut (Pilih Benar atau Salah):',
-    statements: [
-      {
-        id: 's1',
-        text: 'Bangun datar segiempat ABCD yang terbentuk adalah bangun persegi panjang.',
-        correctAnswer: true,
-      },
-      {
-        id: 's2',
-        text: 'Keliling dari bangun datar ABCD tersebut adalah 20 satuan panjang.',
-        correctAnswer: true,
-      },
-      {
-        id: 's3',
-        text: 'Luas dari bangun datar ABCD tersebut adalah 30 satuan luas.',
+        text: 'Hasil dari 2 1/3 + 1 1/2 adalah 3 2/5.',
         correctAnswer: false,
       },
     ],
     explanation:
-      '1. Titik koordinat membentuk persegi panjang dengan panjang alas AB = 4 - (-2) = 6 satuan dan tinggi BC = 5 - 1 = 4 satuan (BENAR).\n2. Keliling = 2 × (panjang + lebar) = 2 × (6 + 4) = 2 × 10 = 20 satuan panjang (BENAR).\n3. Luas = panjang × lebar = 6 × 4 = 24 satuan luas (SALAH, tertulis 30 satuan luas).',
+      '1. Benar: 3/8 + 1/8 = 4/8 = 1/2.\n2. Benar: 5/6 - 1/3 = 5/6 - 2/6 = 3/6 = 1/2.\n3. Salah: 2 1/3 + 1 1/2 = 2 2/6 + 1 3/6 = 3 5/6, bukan 3 2/5.',
+  },
+  {
+    id: 30,
+    type: 'pgk_kategori',
+    topic: 'Perkalian dan Kebalikan Pecahan',
+    difficulty: 'Sedang',
+    text: 'Tentukan Benar atau Salah untuk setiap pernyataan mengenai perkalian dan kebalikan pecahan berikut!',
+    statements: [
+      {
+        id: 's1',
+        text: 'Kebalikan (invers) dari pecahan 4/7 adalah 7/4.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Hasil perkalian antara suatu pecahan dengan kebalikannya selalu bernilai 1.',
+        correctAnswer: true,
+      },
+      {
+        id: 's3',
+        text: 'Hasil dari perkalian 3/5 × 2/3 adalah 1/5.',
+        correctAnswer: false,
+      },
+    ],
+    explanation:
+      '1. Benar: Kebalikan dari a/b adalah b/a, sehingga kebalikan 4/7 adalah 7/4.\n2. Benar: a/b × b/a = 1 (contoh: 4/7 × 7/4 = 28/28 = 1).\n3. Salah: 3/5 × 2/3 = 6/15 = 2/5, bukan 1/5.',
+  },
+  {
+    id: 31,
+    type: 'pgk_kategori',
+    topic: 'Pembagian Kue Tart (Kontekstual)',
+    difficulty: 'Sedang',
+    text: 'Sebuah kue tart dipotong menjadi 12 potongan sama besar seperti pada gambar. Sebanyak 8 potong kue telah dibagikan kepada tamu undangan. Tentukan Benar atau Salah untuk setiap pernyataan berikut!',
+    imageSvg: `<svg viewBox="0 0 240 210" class="w-52 h-auto" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(120, 100)">
+    <circle cx="0" cy="0" r="75" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M 0 0 L 0 -75 A 75 75 0 1 1 -64.95 37.5 Z" fill="#f43f5e" opacity="0.85" stroke="#be123c" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-75" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="37.5" y2="-64.95" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="64.95" y2="-37.5" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="75" y2="0" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="64.95" y2="37.5" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="37.5" y2="64.95" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="0" y2="75" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="-37.5" y2="64.95" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="-64.95" y2="37.5" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="-75" y2="0" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="-64.95" y2="-37.5" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="-37.5" y2="-64.95" stroke="#94a3b8" stroke-width="1.5"/>
+  </g>
+  <text x="120" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Kue Tart: 8 dari 12 Potong Dibagikan (Warna Merah)</text>
+</svg>`,
+    statements: [
+      {
+        id: 's1',
+        text: 'Bagian kue tart yang telah dibagikan kepada tamu bernilai 2/3 dari seluruh kue.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Sisa kue tart yang belum dibagikan adalah 4 potong atau bernilai 1/3 bagian.',
+        correctAnswer: true,
+      },
+      {
+        id: 's3',
+        text: 'Jika 2 potong lagi dibagikan, maka sisa kue tart menjadi 1/4 bagian dari seluruh kue.',
+        correctAnswer: false,
+      },
+    ],
+    explanation:
+      '1. Benar: Bagian yang dibagikan = 8/12. Disederhanakan menjadi (8 ÷ 4) / (12 ÷ 4) = 2/3.\n2. Benar: Sisa kue = 12 - 8 = 4 potong = 4/12 = 1/3 bagian.\n3. Salah: Jika 2 potong lagi dibagikan, sisa kue menjadi 4 - 2 = 2 potong = 2/12 = 1/6 bagian, bukan 1/4.',
+  },
+  {
+    id: 32,
+    type: 'pgk_kategori',
+    topic: 'Pembagian Pecahan dan Desimal',
+    difficulty: 'Sedang',
+    text: 'Tentukan Benar atau Salah untuk setiap pernyataan mengenai pembagian pecahan dan desimal berikut!',
+    statements: [
+      {
+        id: 's1',
+        text: 'Membagi suatu bilangan dengan 1/2 sama hasilnya dengan mengalikan bilangan tersebut dengan 2.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Hasil dari 3/5 ÷ 3 adalah 1/5.',
+        correctAnswer: true,
+      },
+      {
+        id: 's3',
+        text: 'Hasil dari 0,6 ÷ 0,2 adalah 0,3.',
+        correctAnswer: false,
+      },
+    ],
+    explanation:
+      '1. Benar: n ÷ (1/2) = n × (2/1) = 2n.\n2. Benar: 3/5 ÷ 3 = 3/5 × 1/3 = 3/15 = 1/5.\n3. Salah: 0,6 ÷ 0,2 = 6/10 ÷ 2/10 = 6 ÷ 2 = 3, bukan 0,3.',
+  },
+  {
+    id: 33,
+    type: 'pgk_kategori',
+    topic: 'Konversi Antar Bentuk Pecahan',
+    difficulty: 'Mudah',
+    text: 'Tentukan Benar atau Salah untuk pernyataan mengenai perubahan bentuk pecahan di bawah ini!',
+    statements: [
+      {
+        id: 's1',
+        text: 'Pecahan biasa 13/4 jika diubah ke bentuk pecahan campuran menjadi 3 1/4.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Bentuk persen dari bilangan desimal 0,08 adalah 80%.',
+        correctAnswer: false,
+      },
+      {
+        id: 's3',
+        text: 'Pecahan 3/25 senilai dengan 12%.',
+        correctAnswer: true,
+      },
+    ],
+    explanation:
+      '1. Benar: 13 ÷ 4 = 3 sisa 1, sehingga ditulis 3 1/4.\n2. Salah: 0,08 = 8/100 = 8%, bukan 80% (80% adalah 0,8).\n3. Benar: 3/25 = (3 × 4) / (25 × 4) = 12/100 = 12%.',
+  },
+  {
+    id: 34,
+    type: 'pgk_kategori',
+    topic: 'Penerapan Kontekstual Persediaan Beras',
+    difficulty: 'Sedang',
+    text: 'Di sebuah toko kelontong terdapat persediaan beras sebanyak 50 kg. Sebanyak 3/5 bagian dari beras tersebut telah terjual kepada pelanggan. Tentukan Benar atau Salah untuk setiap pernyataan berikut!',
+    statements: [
+      {
+        id: 's1',
+        text: 'Beras yang telah terjual sebanyak 30 kg.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Sisa persediaan beras yang belum terjual adalah 2/5 bagian dari persediaan awal.',
+        correctAnswer: true,
+      },
+      {
+        id: 's3',
+        text: 'Sisa persediaan beras yang belum terjual di toko tersebut sebanyak 25 kg.',
+        correctAnswer: false,
+      },
+    ],
+    explanation:
+      '1. Benar: Beras terjual = 3/5 × 50 kg = 30 kg.\n2. Benar: Bagian sisa = 1 - 3/5 = 2/5 bagian.\n3. Salah: Berat sisa beras = 50 kg - 30 kg = 20 kg, bukan 25 kg.',
+  },
+  {
+    id: 35,
+    type: 'pgk_kategori',
+    topic: 'Operasi Campuran dan Aturan Hitung',
+    difficulty: 'Sukar',
+    text: 'Tentukan Benar atau Salah untuk setiap pernyataan mengenai aturan dan hasil operasi hitung campuran pecahan berikut!',
+    statements: [
+      {
+        id: 's1',
+        text: 'Hasil dari (1/4 + 1/2) × 4 adalah 3.',
+        correctAnswer: true,
+      },
+      {
+        id: 's2',
+        text: 'Hasil dari 1 - 2/5 × 1/2 adalah 4/5.',
+        correctAnswer: true,
+      },
+      {
+        id: 's3',
+        text: 'Pada operasi hitung campuran tanpa tanda kurung, operasi penjumlahan selalu dikerjakan terlebih dahulu sebelum operasi perkalian.',
+        correctAnswer: false,
+      },
+    ],
+    explanation:
+      '1. Benar: Kerjakan dalam kurung dahulu: 1/4 + 2/4 = 3/4. Lalu 3/4 × 4 = 3.\n2. Benar: Kerjakan perkalian dahulu: 2/5 × 1/2 = 2/10 = 1/5. Lalu 1 - 1/5 = 5/5 - 1/5 = 4/5.\n3. Salah: Menurut kaidah operasi hitung, perkalian dan pembagian memiliki derajat lebih tinggi dan harus didahulukan daripada penjumlahan dan pengurangan.',
   },
 ];

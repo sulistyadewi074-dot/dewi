@@ -226,7 +226,7 @@ export function downloadStudentResultPDF(result: ExamResult): void {
   doc.line(colRight, lineY, colRight + 48, lineY);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
+  doc.text(`${CONFIG.LABEL_NIP_GURU || 'NIP'}. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
 
   // Simpan PDF
   const safeName = (result.nama || 'siswa').replace(/[^a-zA-Z0-9]/g, '_');
@@ -333,6 +333,17 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     checkPageBreak(textLines.length * 4.5 + 15);
     doc.text(textLines, 16, y);
     y += textLines.length * 4.5 + 2;
+
+    if (q.imageSvg) {
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8);
+      doc.setTextColor(71, 85, 105);
+      doc.text('[Lihat gambar ilustrasi pecahan pada tampilan aplikasi ujian]', 16, y);
+      y += 5;
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9.5);
+      doc.setTextColor(0, 0, 0);
+    }
 
     // Opsi Jawaban
     if (q.options && q.options.length > 0) {
@@ -626,7 +637,7 @@ export function downloadResultsRecapPDF(results: ExamResult[]): void {
   doc.line(colRightX, sigLineY + 1, colRightX + 50, sigLineY + 1);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
+  doc.text(`${CONFIG.LABEL_NIP_GURU || 'NIP'}. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
 
   // --- FOOTER DI SETIAP HALAMAN ---
   const totalPages = doc.getNumberOfPages();

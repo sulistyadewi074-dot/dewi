@@ -747,10 +747,12 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-3">
             <div>
               <h3 className="text-base font-bold text-slate-900">
-                Struktur &amp; Bank Soal Matematika TKA ({questions.length} Butir)
+                Struktur &amp; Bank Soal Matematika - Materi {CONFIG.MATERI} ({questions.length} Butir)
               </h3>
               <p className="text-xs text-slate-500">
-                18 Soal Pilihan Ganda, 3 Soal Pilihan Ganda Kompleks, 9 Soal PGK Kategori
+                {questions.filter((q) => q.type === 'pg').length} Soal Pilihan Ganda,{' '}
+                {questions.filter((q) => q.type === 'pgk').length} Soal Pilihan Ganda Kompleks,{' '}
+                {questions.filter((q) => q.type === 'pgk_kategori').length} Soal PGK Kategori
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -760,17 +762,17 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                   onClick={() => {
                     if (
                       confirm(
-                        'Kembalikan seluruh bank soal ke 30 butir standar (18 PG, 3 PGK, 9 PGK Kategori)?'
+                        `Kembalikan seluruh bank soal ke ${questions.length} butir standar materi ${CONFIG.MATERI}?`
                       )
                     ) {
                       onResetDefaultQuestions();
                     }
                   }}
                   className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors border border-slate-300 cursor-pointer"
-                  title="Reset seluruh soal ke 30 butir standar Kurikulum Merdeka"
+                  title="Reset seluruh soal ke butir standar Kurikulum Merdeka"
                 >
                   <RotateCcw className="w-3.5 h-3.5 text-slate-600" />
-                  <span>Reset ke 30 Soal Standar</span>
+                  <span>Reset ke {questions.length} Soal Standar</span>
                 </button>
               )}
               <button
@@ -827,6 +829,19 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                 <p className="text-xs sm:text-sm text-slate-900 font-medium whitespace-pre-line">
                   {q.text}
                 </p>
+
+                {/* Ilustrasi Gambar jika ada */}
+                {q.imageSvg && (
+                  <div className="my-2 flex flex-col items-center justify-center p-3 bg-white border border-slate-200 rounded-xl">
+                    <div
+                      className="flex items-center justify-center max-w-full overflow-x-auto scale-90"
+                      dangerouslySetInnerHTML={{ __html: q.imageSvg }}
+                    />
+                    <span className="text-[10px] text-slate-400 mt-1 font-medium">
+                      Ilustrasi Visual Soal
+                    </span>
+                  </div>
+                )}
 
                 {/* Opsi / Pernyataan */}
                 {q.options && (

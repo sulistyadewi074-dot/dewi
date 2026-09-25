@@ -4,17 +4,18 @@
  */
 
 export const CONFIG = {
-  SEKOLAH: "SEKOLAH DASAR",
-  ALAMAT_SEKOLAH: "Jembrana",
+  SEKOLAH: "SD Negeri 3 Loloan Timur",
+  ALAMAT_SEKOLAH: "Loloan Timur, Kec. Negara, Kab. Jembrana, Bali",
   KOTA: "Jembrana",
   KELAS: "VI",
   MATA_PELAJARAN: "MATEMATIKA",
-  MATERI: "TKA (Tes Kemampuan Akademik)",
-  GURU: "........................................",
-  NIP_GURU: "........................................",
-  KEPALA_SEKOLAH: "........................................",
-  NIP_KEPALA_SEKOLAH: "........................................",
-  KKTP: 70,
+  MATERI: "Pecahan",
+  GURU: "Ni Putu Leni Sulistya Dewi, S.Pd",
+  NIP_GURU: "198901102022212002",
+  LABEL_NIP_GURU: "NIPPPK",
+  KEPALA_SEKOLAH: "Susilo Fitri Yatmoko, M.Pd",
+  NIP_KEPALA_SEKOLAH: "19880521 201101 1 010",
+  KKTP: 65,
   ADMIN_PASSWORD: "GURUADMIN",
   
   // Endpoint Google Apps Script Web App utama
